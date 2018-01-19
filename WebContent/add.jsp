@@ -16,7 +16,6 @@
 	
 	String content = request.getParameter("content");
 	
-	String date = request.getParameter("reg_date");
 	
 	vo = new GuestbookVo (1, name, password, content, " " );
 	

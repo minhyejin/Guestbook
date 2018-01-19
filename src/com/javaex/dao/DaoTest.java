@@ -8,7 +8,7 @@ public class DaoTest {
 
 	public static void main(String[] args) {
 		
-		GuestbookVo vo = new GuestbookVo();
+		GuestbookVo vo = new GuestbookVo(1, "min", "1234", "hyejin", "2015-01-01");
 		GuestbookDao dao = new GuestbookDao();
 		
 		dao.insert(vo);
