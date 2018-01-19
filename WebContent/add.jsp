@@ -11,19 +11,12 @@
 	GuestbookVo vo;
 
 	String name = request.getParameter("name");
-	
 	String password = request.getParameter("password");
-	
 	String content = request.getParameter("content");
-	
-	
+
 	vo = new GuestbookVo (1, name, password, content, " " );
-	
-
 	dao.insert(vo);
-	
 	response.sendRedirect("list.jsp");
-
 
 %>
 

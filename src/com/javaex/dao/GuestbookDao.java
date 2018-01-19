@@ -25,7 +25,7 @@ public class GuestbookDao {
 			conn = DriverManager.getConnection(url, "webdb", "webdb");
 
 		    // 3. SQL문 준비 / 바인딩 / 실행
-		    String query = "insert into guestbook values (seq_guestbook_no.nextval, ? , ? , ? , sysdate ))";
+		    String query = "insert into guestbook values (seq_guestbook_no.nextval, ? , ? , ? , sysdate )";
 		    pstmt = conn.prepareStatement(query);
 		    
 		    pstmt.setString(1,vo.getName());
@@ -76,7 +76,7 @@ public class GuestbookDao {
 			conn = DriverManager.getConnection(url, "webdb", "webdb");
 		    // 3. SQL문 준비 / 바인딩 / 실행
 		    String query = " select no, name , password , content , reg_date "
-		    		+ " from emaillist ";
+		    		+ " from guestbook ";
 		    pstmt = conn.prepareStatement(query);
 		    rs = pstmt.executeQuery();
 	
@@ -145,9 +145,9 @@ public class GuestbookDao {
 			pstmt = conn.prepareStatement(query);
 			pstmt.setInt(1, no);
 			pstmt.setString(2, password);
-			int cnt = pstmt.executeUpdate();
+			int count = pstmt.executeUpdate();
 
-			System.out.println(cnt + "건 삭제완료");
+			System.out.println(count + "건 삭제완료");
 
 		} catch (ClassNotFoundException e) {
 			System.out.println("error: 드라이버 로딩 실패 - " + e);
