@@ -145,9 +145,9 @@ public class GuestbookDao {
 			pstmt = conn.prepareStatement(query);
 			pstmt.setInt(1, no);
 			pstmt.setString(2, password);
-			int count = pstmt.executeUpdate();
+			int result = pstmt.executeUpdate();
 
-			System.out.println(count + "건 삭제완료");
+			System.out.println("처리결과 : " + result);
 
 		} catch (ClassNotFoundException e) {
 			System.out.println("error: 드라이버 로딩 실패 - " + e);

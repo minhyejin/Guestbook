@@ -9,5 +9,7 @@
 	GuestbookDao dao = new GuestbookDao();
 	dao.delete(no, password);
 	
+	System.out.println(no + " " + password);
+	
 	response.sendRedirect("list.jsp");
 %>
